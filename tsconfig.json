@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES6",       // Versão do ECMAScript para compilação
+    "target": "ES6",     // Versão do ECMAScript para compilação
+    "experimentalDecorators": true,
     "outDir": "dist",      // Diretório de saída para os arquivos JavaScript
     "rootDir": "src",      // Diretório raiz do código TypeScript
     "module": "CommonJS",  // Sistema de módulos a ser usado (pode variar)

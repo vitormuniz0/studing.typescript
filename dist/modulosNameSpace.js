@@ -1,0 +1,41 @@
+"use strict";
+// Organizando Código com Módulos
+// Módulos no TypeScript ajudam a dividir o código em partes menores e mais gerenciáveis. Cada módulo tem seu próprio escopo, o que significa que variáveis, classes, interfaces, etc., definidas em um módulo não são visíveis para outros módulos, a menos que sejam explicitamente exportados.
+// Importação e Exportação de Módulos
+// Você pode importar o que precisa de um módulo usando a instrução import. Isso mantém o escopo global limpo e seu código bem organizado.
+// ------------------------------------------------------
+// O que são Namespaces?
+// Um namespace é uma forma de agrupar identificadores (como classes, interfaces, funções e variáveis) sob um nome único. Isso é útil para evitar conflitos, pois identificadores com o mesmo nome podem existir em namespaces diferentes sem causar erros.
+// Como Definir um Namespace
+// Para definir um namespace no TypeScript, usamos a palavra-chave namespace, seguida pelo nome do namespace e um bloco de código contendo as declarações que pertencem a esse namespace.
+var Pagamentos;
+(function (Pagamentos) {
+    class Transacao {
+        constructor(valor, descricao) {
+            this.valor = valor;
+            this.descricao = descricao;
+        }
+        infoTransacao() {
+            console.log(`Valor: ${this.valor}, Descrição: ${this.descricao}`);
+        }
+    }
+    Pagamentos.Transacao = Transacao;
+})(Pagamentos || (Pagamentos = {}));
+// Usando um Namespace
+// Para usar um membro de um namespace, você precisa qualificar o nome do membro com o nome do namespace.
+// Exemplo de uso do namespace:
+let minhaTransacao = new Pagamentos.Transacao(100, "Pagamento de Serviço");
+minhaTransacao.infoTransacao(); // Valor: 100, Descrição: Pagamento de Serviço
+// Namespaces Aninhados
+// Você também pode aninhar namespaces para criar uma hierarquia mais detalhada e organizada.
+// Exemplo de namespaces aninhados:
+var Empresa;
+(function (Empresa) {
+    let DepartamentoFinanceiro;
+    (function (DepartamentoFinanceiro) {
+        class Pagamento {
+        }
+        DepartamentoFinanceiro.Pagamento = Pagamento;
+    })(DepartamentoFinanceiro = Empresa.DepartamentoFinanceiro || (Empresa.DepartamentoFinanceiro = {}));
+})(Empresa || (Empresa = {}));
+let pagamento = new Empresa.DepartamentoFinanceiro.Pagamento();

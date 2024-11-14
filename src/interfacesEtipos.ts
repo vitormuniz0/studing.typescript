@@ -18,8 +18,8 @@ interface Empregado extends Usuario {
     cargo: string;
 }
 
-let empregado: Empregado = { nome: "Ana", idade: 28, salario: 5000 , cargo: "programador"};
-console.log(empregado);
+// let empregado: Empregado = { nome: "Ana", idade: 28, salario: 5000 , cargo: "programador"};
+// console.log(empregado);
 
 
 // Tipos vs Interfaces
