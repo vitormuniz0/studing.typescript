@@ -1,25 +1,17 @@
 // Muniz Bank
 
-// name , accountBank
-// depositar , sacar
+import { CompanyAccount } from "./class/CompanyAccount"
+import { SecondPeople } from "./class/NewAccount"
+import { PeopleAccount } from "./class/PeopleAccount"
 
-class Account {
-  name: string;
-  accountNumber: number;
 
-  constructor(name: string, accountNumber: number) {
-    this.name = name;
-    this.accountNumber = accountNumber;
-  }
+// const firstPeople: PeopleAccount = new PeopleAccount (2, 'vitor', 55)      
+// firstPeople.deposit(30)       
+// firstPeople.withdraw(20)
 
-  deposit = (name:string) =>{
-    console.log("Olá", name, "Voce depositou dinheiro");
-  }
+// const companyaccount: CompanyAccount = new CompanyAccount ("Dio", 5)
 
-  withdraw = () =>{
-    console.log("Voce sacou")
-  }
-}
+// companyaccount.getLoan(200);
 
-const newAccount: Account = new Account('Vitor', 2);
-newAccount.deposit("Vitor");
+const secondPeople: SecondPeople = new SecondPeople ('Vitor', 33)
+secondPeople.deposit(300)
